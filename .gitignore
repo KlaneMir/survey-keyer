@@ -1,0 +1,25 @@
+# survey files with respondents' answers, their settings and backups: never commit them
+*.xlsx
+*.xlsm
+*.xls
+*.survey.json
+backups/
+Survey Keyer demo/
+# the same files under the names used by older versions
+*.ankieta.json
+kopie/
+
+# secrets and local settings
+.env
+
+# build
+.venv/
+*.exe
+build/
+dist/
+*.spec
+__pycache__/
+
+# scratch
+poprzednia wersja/
+graphify-out/
