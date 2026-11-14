@@ -1,5 +1,9 @@
 # Survey Keyer
 
+[![Tests](https://github.com/KlaneMir/survey-keyer/actions/workflows/tests.yml/badge.svg)](https://github.com/KlaneMir/survey-keyer/actions/workflows/tests.yml)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue.svg)
+
 Survey Keyer turns a stack of paper questionnaires into a filled-in Excel workbook. It reads the questions from a sheet laid out the way office surveys usually are (a question row, an answer row, a totals row, then one row per survey), shows a keyboard-driven form and writes each answer straight into the file. Only the answer cells change, so the workbook's charts, formulas and formatting stay intact.
 
 It is built for people who type in hundreds of surveys per project and are not always comfortable with computers: everything works from the keyboard, and every error message says what to do next.
