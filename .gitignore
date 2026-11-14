@@ -11,6 +11,9 @@ kopie/
 
 # secrets and local settings
 .env
+.env.*
+!.env.example
+.claude/settings.local.json
 
 # build
 .venv/
