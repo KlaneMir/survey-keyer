@@ -57,7 +57,9 @@ STATE_FILE = Path(os.environ.get("SURVEY_KEYER_STATE") or Path.home() / ".survey
 
 NS = {"m": "http://schemas.openxmlformats.org/spreadsheetml/2006/main"}
 REL_ID = "{http://schemas.openxmlformats.org/officeDocument/2006/relationships}id"
-OPEN_RE = re.compile(r"\s*\(?\s*(?:pytanie otwarte|open question)\s*\)?\s*$", re.I)
+# starts at "(" or the marker word, never at a run of spaces, and has no two adjacent \s*: no catastrophic backtracking
+# (the leading spaces are removed by .strip() where it is used)
+OPEN_RE = re.compile(r"(?:\(\s*)?(?:pytanie otwarte|open question)\s*(?:\)\s*)?$", re.I)
 KINDS = ("single", "multi", "open", "amount")
 XML_BAD = re.compile("[\x00-\x08\x0b\x0c\x0e-\x1f\ud800-\udfff\ufffe\uffff]")   # characters that corrupt an .xlsx file
 MAX_BODY = 2 * 1024 * 1024          # largest request accepted from the browser

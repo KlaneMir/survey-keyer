@@ -59,10 +59,10 @@ One file, `survey_keyer.py`: the Python standard library (`http.server`, `zipfil
 ## Tests
 
 ```bash
-python -m unittest test_survey_keyer -v
+python -m unittest test_survey_keyer test_security_audit -v
 ```
 
-20 tests check amount parsing (Polish and English formats), cell XML validity, saving and loading answers, statistics and the CSV export, adding rows with formatting, changes made to the file from outside, layout detection with English and Polish sheet headers, demo mode, and the safeguards: no key in the page, rejecting an impostor server, zip bombs, entities in XML and formulas in the wizard.
+34 tests check amount parsing (Polish and English formats), cell XML validity, saving and loading answers, statistics and the CSV export, adding rows with formatting, changes made to the file from outside, layout detection with English and Polish sheet headers, demo mode, and the safeguards: no key in the page, rejecting an impostor server, zip bombs, entities in XML and formulas in the wizard. `test_security_audit.py` is a security audit suite: one test per relevant attack (truncated keys, oversized requests, ReDoS, spoofed forwarded headers, weak randomness, timing attacks, template injection, XXE).
 
 ## .exe build
 
